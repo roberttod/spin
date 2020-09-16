@@ -1,0 +1,224 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <script src='/static/no-bounce.js'></script>
+        <script>
+            iNoBounce.enable();
+        </script>
+        <style>
+            body {
+                margin: 0;
+                font-family: monospace;
+                display: flex;
+                background: black;
+                overflow: hidden;
+            }
+            .outer {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-gap: 2px;
+                margin: 2px;
+                box-sizing: border-box;
+                flex: 1;
+            }
+            .section {
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                background: white;
+            }
+            .panel-button {
+                font-size: 3em;
+                padding: 0;
+            }
+            .header {
+                padding: 5px;
+                background: black;
+                color: white;
+                font-size: 2em;
+                font-family: monospace;
+            }
+            .value {
+                flex-grow: 1;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .value button {
+                align-self: stretch;
+            }
+            .value-text {
+                font-size: 4em;
+                flex: 1;
+            }
+
+            button {
+                background: #ddd;
+                border: none;
+                padding: 0.5em;
+                font-size: 2em;
+                margin: 0;
+            }
+            .time-section, .panel-button {
+                grid-column: span 2;
+            }
+            .start-pause {
+                background: #ff5a5a;
+            }
+            .reset {
+                background: #f7c56b;
+            }
+        </style>
+    </head>
+    <body>
+        <div class='outer'>
+            <div class='section time-section'>
+                <div class='header'>Time</div>
+                <div class='value'>
+                    <div class='value-text time'>00:00:00</div>
+                </div>
+            </div>
+            <div class='section'>
+                <div class='header'>Level</div>
+                <div class='value'>
+                    <button class='down'>&lt;</button>
+                    <div class='value-text level'>3</div>
+                    <button class='up'>&gt;</button>
+                </div>
+            </div>
+            <div class='section'>
+                <div class='header'>RPM</div>
+                <div class='value'>
+                    <div class='value-text cadence'>0</div>
+                </div>
+            </div>
+            <div class='section'>
+                <div class='header'>Power</div>
+                <div class='value'>
+                    <div class='value-text power'>0</div>
+                </div>
+            </div>
+            <div class='section'>
+                <div class='header'>Calories</div>
+                <div class='value'>
+                    <div class='value-text calories'>0</div>
+                </div>
+            </div>
+            <button class='panel-button start-pause'>Start</button>
+            <button class='panel-button reset'>Reset</button>
+            <!-- <div class='section'>
+                <h2>Voltage</h2>
+                <h1 class='voltage'></h1>
+            </div> -->
+        </div>
+        <script>
+            let power = 0
+            async function getStatus () {
+                return (await fetch('/status')).json()
+            }
+            async function updateStatus () {
+                const status = await getStatus()
+                power = status.power
+                document.querySelector('.level').innerHTML = status.resistanceLevel + 1
+                console.log('voltage', status.resistanceVoltage)
+                // document.querySelector('.voltage').innerHTML = status.resistanceVoltage
+                document.querySelector('.cadence').innerHTML = Math.round(status.cadence)
+                document.querySelector('.power').innerHTML = Math.round(status.power)
+            }
+            const timer = {
+                time: 0,
+                running: false,
+                counts: 0,
+                powerAvg: 0,
+                start () {
+                    timer.lastTick = Date.now()
+                    timer.interval = setInterval(timer.tick, 100)
+                },
+                pause () {
+                    clearInterval(timer.interval)
+                },
+                resume () {
+                    timer.lastTick = Date.now()
+                    timer.interval = setInterval(timer.tick, 100)
+                },
+                tick () {
+                    const now = Date.now()
+                    timer.time += now - timer.lastTick
+                    timer.lastTick = now
+
+                    timer.powerAvg = (power + (timer.powerAvg * timer.counts)) / (timer.counts + 1)
+                    timer.counts++
+                    
+                    const calories = timer.powerAvg * (timer.time / (1000 * 60 * 60)) * 3.6
+                    document.querySelector('.calories').innerHTML = Math.floor(calories)
+
+                    const second = Math.floor((timer.time / 1000) % 60)
+                    const minute = Math.floor((timer.time / (1000 * 60)) % 60)
+                    const hour = Math.floor((timer.time / (1000 * 60 * 60)) % 24)
+                    document.querySelector('.time').innerHTML = `${pad(hour)}:${pad(minute)}:${pad(second)}`
+
+                    function pad (num) {
+                        if (String(num).length === 2) return String(num)
+                        if (num === 0) return '00'
+                        return '0' + num
+                    }
+                },
+                reset () {
+                    timer.time = 0
+                    timer.counts = 0
+                    timer.powerAvg = 0
+                    clearInterval(timer.interval)
+                    document.querySelector('.time').innerHTML = `00:00:00`
+                    document.querySelector('.calories').innerHTML = `0`
+                }
+            }
+            async function run () {
+                document.querySelector('.up').addEventListener('click', async () => {
+                    const realLevel = Number(document.querySelector('.level').innerHTML) - 1
+                    if (realLevel > 14) return
+                    document.querySelector('.level').innerHTML = realLevel + 2
+                    fetch(`/level/set/${realLevel + 1}`)
+                })
+
+                document.querySelector('.down').addEventListener('click', async () => {
+                    const realLevel = Number(document.querySelector('.level').innerHTML) - 1
+                    if (realLevel < 1) return
+                    document.querySelector('.level').innerHTML = realLevel
+                    fetch(`/level/set/${realLevel - 1}`)
+                })
+
+                const startPauseButton = document.querySelector('.start-pause')
+                startPauseButton.dataset.state = 'stopped'
+                startPauseButton.addEventListener('click', async () => {
+                    const state = startPauseButton.dataset.state
+                    if (state === 'stopped') {
+                        startPauseButton.innerHTML = 'Pause'
+                        startPauseButton.dataset.state = 'running'
+                        timer.start()
+                    }
+                    if (state === 'running') {
+                        startPauseButton.innerHTML = 'Resume'
+                        startPauseButton.dataset.state = 'paused'
+                        timer.pause()
+                    }
+                    if (state === 'paused') {
+                        startPauseButton.innerHTML = 'Pause'
+                        startPauseButton.dataset.state = 'running'
+                        timer.resume()
+                    }
+                })
+
+                const resetButton = document.querySelector('.reset')
+                resetButton.addEventListener('click', async () => {
+                    startPauseButton.innerHTML = 'Start'
+                    startPauseButton.dataset.state = 'stopped'
+                    timer.reset()
+                })
+                await updateStatus()
+                setInterval(updateStatus, 1000)
+            }
+            run()
+        </script>
+    </body>
+</html>

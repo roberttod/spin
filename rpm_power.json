@@ -1,0 +1,634 @@
+[
+    [
+      {
+        "cadence": 61,
+        "power": 31
+      },
+      {
+        "cadence": 65,
+        "power": 37
+      },
+      {
+        "cadence": 69,
+        "power": 43
+      },
+      {
+        "cadence": 74,
+        "power": 47
+      },
+      {
+        "cadence": 81,
+        "power": 52
+      },
+      {
+        "cadence": 85,
+        "power": 55
+      },
+      {
+        "cadence": 92,
+        "power": 60
+      },
+      {
+        "cadence": 95,
+        "power": 64
+      },
+      {
+        "cadence": 99,
+        "power": 69
+      },
+      {
+        "cadence": 106,
+        "power": 78
+      },
+      {
+        "cadence": 112,
+        "power": 86
+      },
+      {
+        "cadence": 117,
+        "power": 93
+      },
+      {
+        "cadence": 122,
+        "power": 99
+      }
+    ],
+    [
+      {
+        "cadence": 60,
+        "power": 39
+      },
+      {
+        "cadence": 70,
+        "power": 56
+      },
+      {
+        "cadence": 79,
+        "power": 65
+      },
+      {
+        "cadence": 85,
+        "power": 71
+      },
+      {
+        "cadence": 92,
+        "power": 78
+      },
+      {
+        "cadence": 100,
+        "power": 92
+      },
+      {
+        "cadence": 112,
+        "power": 112
+      },
+      {
+        "cadence": 128,
+        "power": 139
+      }
+    ],
+    [
+      {
+        "cadence": 64,
+        "power": 58
+      },
+      {
+        "cadence": 75,
+        "power": 78
+      },
+      {
+        "cadence": 80,
+        "power": 85
+      },
+      {
+        "cadence": 84,
+        "power": 89
+      },
+      {
+        "cadence": 91,
+        "power": 98
+      },
+      {
+        "cadence": 99,
+        "power": 114
+      },
+      {
+        "cadence": 106,
+        "power": 129
+      },
+      {
+        "cadence": 109,
+        "power": 135
+      },
+      {
+        "cadence": 118,
+        "power": 154
+      },
+      {
+        "cadence": 131,
+        "power": 182
+      }
+    ],
+    [
+      {
+        "cadence": 57,
+        "power": 54
+      },
+      {
+        "cadence": 69,
+        "power": 81
+      },
+      {
+        "cadence": 77,
+        "power": 96
+      },
+      {
+        "cadence": 87,
+        "power": 111
+      },
+      {
+        "cadence": 95,
+        "power": 128
+      },
+      {
+        "cadence": 102,
+        "power": 144
+      },
+      {
+        "cadence": 109,
+        "power": 161
+      },
+      {
+        "cadence": 112,
+        "power": 168
+      },
+      {
+        "cadence": 129,
+        "power": 209
+      }
+    ],
+    [
+      {
+        "cadence": 58,
+        "power": 66
+      },
+      {
+        "cadence": 67,
+        "power": 88
+      },
+      {
+        "cadence": 80,
+        "power": 118
+      },
+      {
+        "cadence": 91,
+        "power": 137
+      },
+      {
+        "cadence": 103,
+        "power": 167
+      },
+      {
+        "cadence": 112,
+        "power": 190
+      },
+      {
+        "cadence": 124,
+        "power": 220
+      }
+    ],
+    [
+      {
+        "cadence": 60,
+        "power": 83
+      },
+      {
+        "cadence": 65,
+        "power": 97
+      },
+      {
+        "cadence": 70,
+        "power": 112
+      },
+      {
+        "cadence": 75,
+        "power": 124
+      },
+      {
+        "cadence": 80,
+        "power": 136
+      },
+      {
+        "cadence": 85,
+        "power": 147
+      },
+      {
+        "cadence": 90,
+        "power": 159
+      },
+      {
+        "cadence": 95,
+        "power": 172
+      },
+      {
+        "cadence": 100,
+        "power": 186
+      },
+      {
+        "cadence": 105,
+        "power": 199
+      },
+      {
+        "cadence": 110,
+        "power": 213
+      },
+      {
+        "cadence": 118,
+        "power": 234
+      },
+      {
+        "cadence": 124,
+        "power": 250
+      },
+      {
+        "cadence": 135,
+        "power": 280
+      },
+      {
+        "cadence": 149,
+        "power": 318
+      }
+    ],
+    [
+      {
+        "cadence": 50,
+        "power": 70
+      },
+      {
+        "cadence": 56,
+        "power": 86
+      },
+      {
+        "cadence": 64,
+        "power": 111
+      },
+      {
+        "cadence": 70,
+        "power": 131
+      },
+      {
+        "cadence": 74,
+        "power": 141
+      },
+      {
+        "cadence": 80,
+        "power": 158
+      },
+      {
+        "cadence": 84,
+        "power": 169
+      },
+      {
+        "cadence": 88,
+        "power": 180
+      },
+      {
+        "cadence": 92,
+        "power": 192
+      },
+      {
+        "cadence": 97,
+        "power": 207
+      },
+      {
+        "cadence": 100,
+        "power": 216
+      },
+      {
+        "cadence": 105,
+        "power": 231
+      },
+      {
+        "cadence": 110,
+        "power": 246
+      },
+      {
+        "cadence": 119,
+        "power": 273
+      },
+      {
+        "cadence": 134,
+        "power": 318
+      }
+    ],
+    [
+      {
+        "cadence": 59,
+        "power": 104
+      },
+      {
+        "cadence": 75,
+        "power": 159
+      },
+      {
+        "cadence": 86,
+        "power": 194
+      },
+      {
+        "cadence": 90,
+        "power": 208
+      },
+      {
+        "cadence": 102,
+        "power": 248
+      },
+      {
+        "cadence": 122,
+        "power": 316
+      },
+      {
+        "cadence": 133,
+        "power": 354
+      }
+    ],
+    [
+      {
+        "cadence": 60,
+        "power": 124
+      },
+      {
+        "cadence": 75,
+        "power": 185
+      },
+      {
+        "cadence": 83,
+        "power": 216
+      },
+      {
+        "cadence": 95,
+        "power": 262
+      },
+      {
+        "cadence": 100,
+        "power": 282
+      },
+      {
+        "cadence": 111,
+        "power": 324
+      },
+      {
+        "cadence": 116,
+        "power": 344
+      },
+      {
+        "cadence": 126,
+        "power": 383
+      },
+      {
+        "cadence": 128,
+        "power": 391
+      }
+    ],
+    [
+      {
+        "cadence": 52,
+        "power": 109
+      },
+      {
+        "cadence": 58,
+        "power": 131
+      },
+      {
+        "cadence": 71,
+        "power": 194
+      },
+      {
+        "cadence": 82,
+        "power": 238
+      },
+      {
+        "cadence": 90,
+        "power": 270
+      },
+      {
+        "cadence": 105,
+        "power": 333
+      },
+      {
+        "cadence": 115,
+        "power": 375
+      },
+      {
+        "cadence": 130,
+        "power": 438
+      }
+    ],
+    [
+      {
+        "cadence": 50,
+        "power": 117.9038462
+      },
+      {
+        "cadence": 60,
+        "power": 155.2586207
+      },
+      {
+        "cadence": 70,
+        "power": 215.4968165
+      },
+      {
+        "cadence": 80,
+        "power": 259.8950293
+      },
+      {
+        "cadence": 90,
+        "power": 304.137931
+      },
+      {
+        "cadence": 110,
+        "power": 401.3848631
+      },
+      {
+        "cadence": 130,
+        "power": 494.5
+      }
+    ],
+    [
+      {
+        "cadence": 50,
+        "power": 131
+      },
+      {
+        "cadence": 60,
+        "power": 175
+      },
+      {
+        "cadence": 73,
+        "power": 250
+      },
+      {
+        "cadence": 79,
+        "power": 284
+      },
+      {
+        "cadence": 87,
+        "power": 327
+      },
+      {
+        "cadence": 91,
+        "power": 348
+      },
+      {
+        "cadence": 98,
+        "power": 384
+      },
+      {
+        "cadence": 108,
+        "power": 436
+      },
+      {
+        "cadence": 130,
+        "power": 551
+      }
+    ],
+    [
+      {
+        "cadence": 48,
+        "power": 136
+      },
+      {
+        "cadence": 57,
+        "power": 179
+      },
+      {
+        "cadence": 66,
+        "power": 230
+      },
+      {
+        "cadence": 73,
+        "power": 273
+      },
+      {
+        "cadence": 85,
+        "power": 344
+      },
+      {
+        "cadence": 98,
+        "power": 420
+      },
+      {
+        "cadence": 115,
+        "power": 524
+      },
+      {
+        "cadence": 129,
+        "power": 609
+      }
+    ],
+    [
+      {
+        "cadence": 52,
+        "power": 172
+      },
+      {
+        "cadence": 60,
+        "power": 216
+      },
+      {
+        "cadence": 76,
+        "power": 320
+      },
+      {
+        "cadence": 89,
+        "power": 400
+      },
+      {
+        "cadence": 103,
+        "power": 501
+      },
+      {
+        "cadence": 110,
+        "power": 553
+      },
+      {
+        "cadence": 134,
+        "power": 728
+      }
+    ],
+    [
+      {
+        "cadence": 49,
+        "power": 169
+      },
+      {
+        "cadence": 65,
+        "power": 270
+      },
+      {
+        "cadence": 68,
+        "power": 291
+      },
+      {
+        "cadence": 78,
+        "power": 359
+      },
+      {
+        "cadence": 88,
+        "power": 430
+      },
+      {
+        "cadence": 102,
+        "power": 529
+      },
+      {
+        "cadence": 108,
+        "power": 571
+      },
+      {
+        "cadence": 112,
+        "power": 599
+      },
+      {
+        "cadence": 125,
+        "power": 690
+      }
+    ],
+    [
+      {
+        "cadence": 48,
+        "power": 182
+      },
+      {
+        "cadence": 59,
+        "power": 253
+      },
+      {
+        "cadence": 68,
+        "power": 325
+      },
+      {
+        "cadence": 79,
+        "power": 404
+      },
+      {
+        "cadence": 92,
+        "power": 503
+      },
+      {
+        "cadence": 99,
+        "power": 558
+      },
+      {
+        "cadence": 108,
+        "power": 628
+      },
+      {
+        "cadence": 121,
+        "power": 729
+      },
+      {
+        "cadence": 141,
+        "power": 885
+      }
+    ]
+  ]
